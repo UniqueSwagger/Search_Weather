@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: url(images/weather.jpg) no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
+      .image {
+        filter: contrast(5);
+      }
+      #search-btn {
+        box-shadow: none !important;
+      }
+      .spinner-grow {
+        width: 3rem !important;
+        height: 3rem !important;
+      }
+      #spinner-section {
+        position: relative !important;
+        top: 80px !important;
+      }
+      @media only screen and (max-width: 688px) {
+        .w-50 {
+          width: 75% !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <form class="d-flex w-50 mx-auto pt-5">
+        <input
+          id="search-field"
+          class="form-control me-2"
+          type="text"
+          placeholder="Enter a location for Weather..."
+          aria-label="Search"
+          required
+        />
+        <button id="search-btn" class="btn btn-danger" type="submit">
+          Search
+        </button>
+      </form>
+      <p class="text-danger mx-auto w-50 invisible" id="error-text">
+        Please enter any location
+      </p>
+    </section>
+
+    <section id="spinner-section">
+      <div id="spinner" class="d-none">
+        <div class="spinner-grow text-light d-block mx-auto" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-5" id="error-div"></div>
+    <section id="weather-details" class="mt-5">
+      <div id="default-weather" class="text-white text-center">
+        <img
+          class="image"
+          src="https://openweathermap.org/img/wn/50n@2x.png"
+          alt=""
+        />
+        <h1>Dhaka</h1>
+        <h2 class="fw-normal">BD</h2>
+        <h3><span>30.14</span>°C</h3>
+        <h1 class="lead">haze</h1>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
